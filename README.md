@@ -1,4 +1,4 @@
 Breakout
 ========
 
-Assignment #3 in Stanford Online CS 103A. Breakout in Java.
+Assignment #3 in Stanford Online CS 103A: Programming Methodology.The game breakout in Java.
