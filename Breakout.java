@@ -1,10 +1,15 @@
 /*
  * File: Breakout.java
  * -------------------
- * Name:
- * Section Leader:
  * 
- * This file will eventually implement the game of Breakout.
+ * This file creates a simple version of the game breakout.
+ * features:
+ * it lays out rows of different bricks in different colors at the top
+ * it makes a block at the bottom that follows the mouse with respect to the x axis
+ * and a ball that travels at a randomly selected angle/speed, and reverses the angle when it bumps into something
+ * blocks also disappear when the ball bumps into them; you win when all blocks are gone
+ * you lose a turn when the ball touches the bototm of the screen; you lose the game when there are no turns left
+ * Some of the code, (much of 'getColidingObject' and many variables) was provided by the course
  */
 
 import acm.graphics.*;
@@ -191,13 +196,13 @@ public class Breakout extends GraphicsProgram {
 	}
 	private GObject getCollidingObject() {
 		GObject collider;
-		// ball is moving up
+		// if ball is moving up
 		if (vy<0) {
 			collider = getElementAt(ball.getX(),ball.getY());
 			if (collider != null) return collider;
 			collider = getElementAt(ball.getX()+BALL_RADIUS*2,ball.getY());
 			return collider;
-		//ball is moving down
+		//if ball is moving down
 		} else {		
 			collider = getElementAt(ball.getX()+BALL_RADIUS*2,ball.getY()+BALL_RADIUS*2);
 			if (collider != null) return collider;
